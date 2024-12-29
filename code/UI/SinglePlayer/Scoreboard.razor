@@ -1,0 +1,23 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	<label>#scoreboard.highscore</label>
+	<label>
+		@LeaderboardController.Highscore
+	</label>
+	<label>#scoreboard.score</label>
+	<label>
+		@SinglePlayerGame.Instance.ControllerSingle.Score
+	</label>
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine(LeaderboardController.Highscore, SinglePlayerGame.Instance.ControllerSingle.Score);
+}

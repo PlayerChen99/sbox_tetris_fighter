@@ -1,0 +1,53 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	@{
+		if (MultiplayerGame.LeftLocal || MultiplayerGame.RightLocal)
+		{
+			<button class="join-game leave" onclick="@LeaveSide">
+				<label>#sideselect.joinobserver</label>
+			</button>
+		}
+		else
+		{
+			if (MultiplayerGame.LeftNoPlayer)
+			{
+				<button class="join-game left" onclick="@MultiplayerGame.Instance.JoinLeft">
+					<label>#sideselect.joinleft</label>
+				</button>
+			}
+			if (MultiplayerGame.RightNoPlayer)
+			{
+				<button class="join-game right" onclick="@MultiplayerGame.Instance.JoinRight">
+					<label>#sideselect.joinright</label>
+				</button>
+			}
+		}
+	}
+</root>
+
+@code
+{
+	void LeaveSide()
+	{
+		if (MultiplayerGame.LeftLocal)
+		{
+			MultiplayerGame.Instance.ControllerLeft.ClearZone();
+			MultiplayerGame.Instance.ControllerLeft.Network.DropOwnership();
+		}
+		if (MultiplayerGame.RightLocal)
+		{
+			MultiplayerGame.Instance.ControllerRight.ClearZone();
+			MultiplayerGame.Instance.ControllerRight.Network.DropOwnership();
+		}
+		PlayerController.Local?.GameObject.Destroy();
+	}
+
+	protected override int BuildHash() => System.HashCode.Combine(MultiplayerGame.LeftNoPlayer, MultiplayerGame.RightNoPlayer);
+}

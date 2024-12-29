@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	@{
+		if (MultiplayerGame.Instance.CurrentState == MultiplayerGame.GameState.Ready)
+		{
+			<label>#countdown.gamestart</label>
+		}
+		else if (MultiplayerGame.Instance.CurrentState == MultiplayerGame.GameState.Finish)
+		{
+			<label>#countdown.nextgame</label>
+		}
+	}
+	<label>@GetCountDown</label>
+</root>
+
+@code
+{
+	int GetCountDown => (int)MultiplayerGame.TimeUntilGame;
+
+	protected override int BuildHash() => System.HashCode.Combine(GetCountDown);
+}

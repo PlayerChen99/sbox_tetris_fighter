@@ -1,0 +1,56 @@
+@using Sandbox;
+@using Sandbox.UI;
+
+@implements INavigatorPage
+
+@attribute [StyleSheet]
+
+<root>
+	<button class="button-menu" onclick=@StartSinglePlayerMode>#mainmenu.single</button>
+	<button class="button-menu" onclick=@StartMultiplayerMode>#mainmenu.multi</button>
+	<a class="button-menu" href="/lobbies">#mainmenu.browser</a>
+	<button class="button-menu" onclick=@Game.Close>#mainmenu.quit</button>
+
+	<div class="tip1">
+		<img src="@ButtonA" />
+		<label>/</label>
+		<img src="@ButtonD" />
+		<label>+</label>
+		<img src="@ButtonSpace" />
+		<img src="textures/tips/wall.png" />
+	</div>
+	<div class="tip2">
+		<img src="@ButtonS" />
+		<label>+</label>
+		<img src="@ButtonJ" />
+		<img src="textures/tips/down.png" />
+	</div>
+	<div class="tip3">
+		<img src="@ButtonJ" />
+		<img src="textures/tips/push.png" />
+	</div>
+	<div class="tip4">
+		<img src="@ButtonK" />
+		<img src="textures/tips/rotate.png" />
+	</div>
+</root>
+
+@code
+{
+	void StartSinglePlayerMode()
+	{
+		Scene.LoadFromFile("scenes/singleplayermode.scene");
+	}
+
+	void StartMultiplayerMode()
+	{
+		Scene.LoadFromFile("scenes/multiplayermode.scene");
+	}
+
+	string ButtonA => Input.GetGlyph("left", InputGlyphSize.Medium, false).ResourcePath;
+	string ButtonD => Input.GetGlyph("right", InputGlyphSize.Medium, false).ResourcePath;
+	string ButtonS => Input.GetGlyph("backward", InputGlyphSize.Medium, false).ResourcePath;
+	string ButtonSpace => Input.GetGlyph("jump", InputGlyphSize.Medium, false).ResourcePath;
+	string ButtonJ => Input.GetGlyph("kick", InputGlyphSize.Medium, false).ResourcePath;
+	string ButtonK => Input.GetGlyph("rotate", InputGlyphSize.Medium, false).ResourcePath;
+}

@@ -1,0 +1,544 @@
+{
+  "__guid": "c9394069-23f6-4e84-aabd-d3957652f3bc",
+  "GameObjects": [
+    {
+      "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
+      "Flags": 0,
+      "Name": "Sun",
+      "Rotation": "-0.0729315,0.4822396,0.1305433,0.8631827",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "3d6a6807-b4e8-4285-885b-77ff9b1e6af5",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.94419,0.97767,1,1",
+          "Shadows": true,
+          "SkyColor": "0.2532,0.32006,0.35349,1"
+        }
+      ]
+    },
+    {
+      "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-191.9999,0,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "f9e45515-d914-4ec0-be5c-66cd2c00f585",
+          "BackgroundColor": "0,0,0,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": true,
+          "OrthographicHeight": 640,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 288,
+          "ZNear": 32
+        }
+      ]
+    },
+    {
+      "__guid": "61f4afac-9130-4f72-96a7-f6c18bc31837",
+      "Flags": 0,
+      "Name": "GameController",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 1,
+      "Components": [
+        {
+          "__type": "MultiplayerGame",
+          "__guid": "60f36524-57a3-4fe3-bc88-61516c46e892",
+          "ControllerLeft": {
+            "_type": "component",
+            "component_id": "93bb5553-94ff-4325-88e1-a7b712b36a14",
+            "go": "6ea79a75-8839-4d32-8a43-344bcb655618",
+            "component_type": "TetrisController"
+          },
+          "ControllerRight": {
+            "_type": "component",
+            "component_id": "f7036c11-c26a-4f0e-bbb1-c4aa18e67040",
+            "go": "781437e9-e5d5-4c2c-b768-54520d4a11e7",
+            "component_type": "TetrisController"
+          }
+        }
+      ]
+    },
+    {
+      "__guid": "6ea79a75-8839-4d32-8a43-344bcb655618",
+      "Flags": 0,
+      "Name": "TetrisZoneLeft",
+      "Position": "0,320,0",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 3,
+      "Components": [
+        {
+          "__type": "TetrisController",
+          "__guid": "93bb5553-94ff-4325-88e1-a7b712b36a14",
+          "Shapes": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapei.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapej.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapel.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapeo.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapes.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapet.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapez.prefab"
+            }
+          ],
+          "BlockOriginObject": {
+            "_type": "gameobject",
+            "go": "e5bc5a4b-d102-4b8e-b322-8de545610652"
+          },
+          "NextShapeContainer": {
+            "_type": "gameobject",
+            "go": "82948911-d2b8-4448-ad09-6ed2f230656f"
+          },
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player/player.prefab"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "ea8611e1-8c34-404a-840f-4315ae2ec959",
+          "Flags": 0,
+          "Name": "Back",
+          "Position": "64,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "e0d4c9d0-8c76-4f03-87bf-86816bd05308",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,448,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "ac5c6540-1a93-4570-bd30-94a7f3331dea",
+          "Flags": 0,
+          "Name": "Front",
+          "Position": "-64,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5c102069-1236-41ae-b67c-1ecb74fe3fe3",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,448,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "a5d9860c-9589-4d08-8bad-a064c34e3380",
+          "Flags": 0,
+          "Name": "Left",
+          "Position": "0,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "63c06a9d-05d1-4f22-95f5-bbd00626a2df",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,64,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "600b9af4-14a2-46ff-9086-a20cb121f1f8",
+          "Flags": 0,
+          "Name": "Right",
+          "Position": "0,-256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "06362525-1692-49c1-9cbb-0a76a23b8aa4",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,64,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "8924c692-3d26-4e30-b3d0-19d08f2ed609",
+          "Flags": 0,
+          "Name": "Top",
+          "Position": "0,0,352",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "a6bd25ab-a29a-4331-bfda-0fe5c5a8d9be",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,576,64",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "13e07081-c25e-4145-b1fa-02b79f149e93",
+          "Flags": 0,
+          "Name": "Bottom",
+          "Position": "0,0,-352",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "92c90aef-298a-46a7-8f3e-a1a1e30de469",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,576,64",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "e5bc5a4b-d102-4b8e-b322-8de545610652",
+          "Flags": 0,
+          "Name": "BlockOrigin",
+          "Position": "0,-144,-304",
+          "Enabled": true
+        },
+        {
+          "__guid": "e2fb521f-b271-496e-96ab-a33280ce1598",
+          "Flags": 0,
+          "Name": "BlockBackground",
+          "Position": "32,0,0",
+          "Rotation": "-0.7071068,-0.00000003090862,0.7071068,-0.00000003090862",
+          "Scale": "6.4,3.2,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2081ff2b-c06a-460c-9065-92b2893b1faa",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "Off",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "4c9c9255-438b-4433-bbb6-c32858e390ee",
+          "Flags": 0,
+          "Name": "PlayerBackground",
+          "Position": "32.1,0,0",
+          "Rotation": "-0.7071068,-0.00000003090862,0.7071068,-0.00000003090862",
+          "Scale": "6.4,4.48,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "82001af2-82d0-4d29-bf73-3fc8a43b6214",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.4,0.4,0.4,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "781437e9-e5d5-4c2c-b768-54520d4a11e7",
+      "Flags": 0,
+      "Name": "TetrisZoneRight",
+      "Position": "0,-320,0",
+      "Enabled": true,
+      "NetworkMode": 1,
+      "NetworkOrphaned": 3,
+      "Components": [
+        {
+          "__type": "TetrisController",
+          "__guid": "f7036c11-c26a-4f0e-bbb1-c4aa18e67040",
+          "Shapes": [
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapei.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapej.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapel.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapeo.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapes.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapet.prefab"
+            },
+            {
+              "_type": "gameobject",
+              "prefab": "prefabs/shapez.prefab"
+            }
+          ],
+          "BlockOriginObject": {
+            "_type": "gameobject",
+            "go": "ba1474da-da65-4bcb-bb0f-84bb3d9980bc"
+          },
+          "NextShapeContainer": {
+            "_type": "gameobject",
+            "go": "82948911-d2b8-4448-ad09-6ed2f230656f"
+          },
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player/player.prefab"
+          }
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "32264c85-0d4f-4750-b067-6f292a7366cc",
+          "Flags": 0,
+          "Name": "Back",
+          "Position": "64,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "41cdf000-c601-4dbd-976e-2a494e7b92da",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,448,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "7c45c17e-7bc7-452b-83be-cabf511d2213",
+          "Flags": 0,
+          "Name": "Front",
+          "Position": "-64,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "8d1eff40-6a94-4682-a08e-223c6d27b767",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "64,448,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "15ce471d-7f87-48aa-9b37-95679fd0debf",
+          "Flags": 0,
+          "Name": "Left",
+          "Position": "0,256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "444a68de-f88e-46b9-a180-3a505a38b327",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,64,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "67652374-1738-4305-8e55-da502104cdaa",
+          "Flags": 0,
+          "Name": "Right",
+          "Position": "0,-256,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6ee9b208-5b60-4da7-b633-7badfc3850b7",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,64,640",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "41fa5988-8f8f-4920-b97b-bd59f286e1a5",
+          "Flags": 0,
+          "Name": "Top",
+          "Position": "0,0,352",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "ffdbd0be-db9d-4a78-a384-8ceeecb7864c",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,576,64",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "5f85eed5-1a77-4b0b-b4e3-6a93b1a58a1e",
+          "Flags": 0,
+          "Name": "Bottom",
+          "Position": "0,0,-352",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "25a0b458-0189-4470-9248-82f80a3e2aa3",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "192,576,64",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "ba1474da-da65-4bcb-bb0f-84bb3d9980bc",
+          "Flags": 0,
+          "Name": "BlockOrigin",
+          "Position": "0,-144,-304",
+          "Enabled": true
+        },
+        {
+          "__guid": "0b77ec69-e608-4562-8a2b-313675ec602e",
+          "Flags": 0,
+          "Name": "BlockBackground",
+          "Position": "32,0,0",
+          "Rotation": "-0.7071068,-0.00000003090862,0.7071068,-0.00000003090862",
+          "Scale": "6.4,3.2,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "aae8abf5-1850-4236-baa6-e148c79302b6",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "Off",
+              "Tint": "1,1,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "bc8713f7-73d7-4aef-886e-dabb1eeb8ae2",
+          "Flags": 0,
+          "Name": "PlayerBackground",
+          "Position": "32.1,0,0",
+          "Rotation": "-0.7071068,-0.00000003090862,0.7071068,-0.00000003090862",
+          "Scale": "6.4,4.48,1",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7c087077-ae49-4f22-9e3e-953164597175",
+              "BodyGroups": 18446744073709551615,
+              "MaterialOverride": "materials/default.vmat",
+              "Model": "models/dev/plane.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.4,0.4,0.4,1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "82948911-d2b8-4448-ad09-6ed2f230656f",
+      "Flags": 0,
+      "Name": "NextShapeContainer",
+      "Enabled": true
+    },
+    {
+      "__guid": "b5269120-c099-4012-9a0f-7d4e999ae846",
+      "Flags": 0,
+      "Name": "Screen",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "f023c4a7-94f7-4d60-80c9-b4a5235ef11f",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Multiplayer",
+          "__guid": "4df430cb-4202-436e-87b1-6683db785140"
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 60,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "minimal",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

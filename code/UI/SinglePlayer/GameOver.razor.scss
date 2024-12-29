@@ -1,0 +1,24 @@
+GameOver {
+    position: absolute;
+
+    .holder {
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        color: white;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+
+        .button-restart {
+            border: solid white 2px;
+
+            :hover {
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+}

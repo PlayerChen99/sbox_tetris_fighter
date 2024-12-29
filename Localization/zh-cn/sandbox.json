@@ -1,0 +1,20 @@
+{
+    "mainmenu.single" : "开始游戏",
+    "mainmenu.multi" : "多人模式",
+    "mainmenu.browser": "浏览房间",
+    "mainmenu.quit": "退出",
+    "browser.join": "加入",
+    "browser.refresh": "刷新",
+    "browser.close": "关闭",
+    "leaderboard.title": "排行榜",
+    "scoreboard.highscore": "高分",
+    "scoreboard.score": "得分",
+    "gameover.title": "游戏结束",
+    "gameover.score": "你的分数",
+    "gameover.newgame": "新游戏",
+    "sideselect.joinleft": "加入左侧",
+    "sideselect.joinright": "加入右侧",
+    "sideselect.joinobserver": "加入观战",
+    "countdown.gamestart": "游戏开始于",
+    "countdown.nextgame": "下局开始于"
+}

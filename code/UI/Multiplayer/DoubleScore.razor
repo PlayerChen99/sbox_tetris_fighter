@@ -1,0 +1,22 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	<label>#scoreboard.score</label>
+	<div>
+		<label class="displayname">@MultiplayerGame.LeftConnection?.DisplayName</label>
+		<label class="vs">VS</label>
+		<label class="displayname">@MultiplayerGame.RightConnection?.DisplayName</label>
+	</div>
+	<label>@MultiplayerGame.Instance.ControllerLeft.Score:@MultiplayerGame.Instance.ControllerRight.Score</label>
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine(MultiplayerGame.LeftNoPlayer, MultiplayerGame.RightNoPlayer,MultiplayerGame.Instance.ControllerLeft.Score, MultiplayerGame.Instance.ControllerRight.Score);
+}

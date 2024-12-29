@@ -1,0 +1,27 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@using Sandbox.Network;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	<label class="lobby-name">@Lobby.Name</label>
+	<label class="members">@Lobby.Members/@Lobby.MaxMembers</label>
+	<button class="join" onclick="@JoinLobby">#browser.join</button>
+</root>
+
+@code
+{
+	public LobbyInformation Lobby { get; set; }
+
+	void JoinLobby()
+	{
+		if (!Lobby.IsFull)
+		{
+			GameNetworkSystem.Connect(Lobby.OwnerId);
+		}
+	}
+}

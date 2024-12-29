@@ -1,0 +1,30 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	@{
+		if (SinglePlayerGame.Instance.ControllerSingle.CurrentState == TetrisController.GameState.Finish)
+		{
+			<div class="holder">
+			<label>#gameover.title</label>
+			<label>#gameover.score</label>
+			<label>
+				@SinglePlayerGame.Instance.ControllerSingle.Score
+			</label>
+			<button class="button-restart" onclick="@SinglePlayerGame.Instance.StartNewGame">
+					<lable>#gameover.newgame</lable>
+				</button>
+			</div>
+		}
+	}
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine(SinglePlayerGame.Instance.ControllerSingle.CurrentState == TetrisController.GameState.Finish);
+}

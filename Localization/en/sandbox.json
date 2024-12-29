@@ -1,0 +1,20 @@
+{
+    "mainmenu.single" : "Play",
+    "mainmenu.multi" : "Multiplayer Mode",
+    "mainmenu.browser": "Server Browser",
+    "mainmenu.quit": "Quit",
+    "browser.join": "Join",
+    "browser.refresh": "Refresh",
+    "browser.close": "Close",
+    "leaderboard.title": "Leaderboard",
+    "scoreboard.highscore": "Highscore",
+    "scoreboard.score": "Score",
+    "gameover.title": "Game Over",
+    "gameover.score": "Your Score",
+    "gameover.newgame": "Start New Game",
+    "sideselect.joinleft": "Join Left",
+    "sideselect.joinright": "Join Right",
+    "sideselect.joinobserver": "Join Observer",
+    "countdown.gamestart": "Game Start in",
+    "countdown.nextgame": "Next Game in"
+}

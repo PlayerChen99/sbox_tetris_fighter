@@ -1,0 +1,67 @@
+{
+  "RootObject": {
+    "__guid": "452f0cfe-d84b-4cb4-bac7-2e106b55653a",
+    "Flags": 0,
+    "Name": "shapet",
+    "Enabled": true,
+    "NetworkMode": 1,
+    "Components": [
+      {
+        "__type": "Shape",
+        "__guid": "f4fa90b1-f4bb-4d5b-a48b-19bdcb91b4bf"
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "06bcf12e-3f60-423c-b428-91c4244fffc8",
+        "Flags": 0,
+        "Name": "block (1)",
+        "Position": "0,0,32",
+        "Enabled": true,
+        "__Prefab": "prefabs/block.prefab",
+        "__PrefabVariables": {
+          "Color": "0.5,0,1,1"
+        }
+      },
+      {
+        "__guid": "008a54f0-82df-46d7-b49c-305aadb3f2e9",
+        "Flags": 0,
+        "Name": "block (2)",
+        "Enabled": true,
+        "__Prefab": "prefabs/block.prefab",
+        "__PrefabVariables": {
+          "Color": "0.49804,0,1,1"
+        }
+      },
+      {
+        "__guid": "48d9cf85-c814-42bf-9de9-c1245ec297dd",
+        "Flags": 0,
+        "Name": "block (3)",
+        "Position": "0,-32,0",
+        "Enabled": true,
+        "__Prefab": "prefabs/block.prefab",
+        "__PrefabVariables": {
+          "Color": "0.49804,0,1,1"
+        }
+      },
+      {
+        "__guid": "fcf98307-94b5-4dda-bf2e-2d2c0c152001",
+        "Flags": 0,
+        "Name": "block (4)",
+        "Position": "0,32,0",
+        "Enabled": true,
+        "__Prefab": "prefabs/block.prefab",
+        "__PrefabVariables": {
+          "Color": "0.49804,0,1,1"
+        }
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

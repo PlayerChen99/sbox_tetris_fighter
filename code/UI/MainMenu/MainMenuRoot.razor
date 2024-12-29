@@ -1,0 +1,17 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits NavHostPanel
+
+<root>
+
+</root>
+
+@code
+{
+	public MainMenuRoot()
+	{
+		DefaultUrl = "/";
+		AddDestination("/", typeof(MainPage));
+		AddDestination("/lobbies", typeof(LobbyBrowser));
+	}
+}

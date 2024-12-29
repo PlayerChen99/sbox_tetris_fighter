@@ -1,0 +1,54 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Network
+
+@implements INavigatorPage
+@attribute [StyleSheet]
+
+<root>
+	<label class="title">Rooms</label>
+	@{
+		<div class="lobby-list">
+			@{
+				if (IsRefreshing)
+				{
+					<label>Refreshing</label>
+				}
+				else if (LobbyList.Count == 0)
+				{
+					<label>No rooms find</label>
+				}
+				else
+				{
+					foreach (var lobby in LobbyList)
+					{
+						<LobbyEntry Lobby="@lobby" />
+					}
+				}
+			}
+		</div>
+	}
+	<div class="button-panel">
+		<button class="button-menu" onclick="@Refresh">#browser.refresh</button>
+		<a class="button-menu" href="/">#browser.close</a>
+	</div>
+</root>
+
+@code {
+	List<LobbyInformation> LobbyList = new();
+
+	bool IsRefreshing;
+
+	public LobbyBrowser()
+	{
+		Refresh();
+	}
+
+	async void Refresh()
+	{
+		IsRefreshing = true;
+		LobbyList = await Networking.QueryLobbies();
+		IsRefreshing = false;
+		StateHasChanged();
+	}
+}

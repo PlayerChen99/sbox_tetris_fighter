@@ -1,0 +1,41 @@
+@using Sandbox;
+@using Sandbox.UI;
+@using Sandbox.Services;
+@inherits Panel
+
+@attribute [StyleSheet]
+
+
+<root>
+	<label>#leaderboard.title</label>
+	@{
+		foreach (var entry in LeaderboardController.board.Entries)
+		{
+			<div>
+				<label class="rank">
+					@entry.Rank.ToString()
+				</label>
+				<label class="displayname">
+					@entry.DisplayName
+				</label>
+				<label class="score">
+					@entry.Value.ToString()
+				</label>
+			</div>
+		}
+	}
+</root>
+
+@code
+{
+	public Leaderboard()
+	{
+		RefreshLeaderboard();
+	}
+
+	public async void RefreshLeaderboard()
+	{
+		await LeaderboardController.RefreshLeaderboard();
+		StateHasChanged();
+	}
+}

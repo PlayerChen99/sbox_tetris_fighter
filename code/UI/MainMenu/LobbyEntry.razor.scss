@@ -1,0 +1,29 @@
+LobbyEntry {
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border:2px solid white;
+    padding:20px;
+    border-radius:10px;
+
+    .lobby-name {
+        flex: 1;
+    }
+
+    .members {
+        flex: 0;
+    }
+
+    .join {
+        flex: 0;
+        border-top: solid 2px white;
+        border-bottom: solid 2px white;
+        background-color: black;
+
+        :hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}

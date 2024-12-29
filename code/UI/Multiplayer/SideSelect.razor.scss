@@ -1,0 +1,17 @@
+SideSelect {
+    position: absolute;
+    top:70%;
+    font-weight: bold;
+    color: white;
+
+    font-size:40px;
+
+    .join-game {
+        margin: 20px;
+
+        :hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+{
+  "RootObject": {
+    "__guid": "455b438f-2538-48a3-9ad5-e9754dd30d8a",
+    "Flags": 0,
+    "Name": "block",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.SpriteRenderer",
+        "__guid": "f73a8dc3-dd9f-424c-b1e1-8640244800b7",
+        "Additive": false,
+        "CastShadows": false,
+        "Color": "1,1,1,1",
+        "DepthFeather": 0,
+        "FlipHorizontal": false,
+        "FlipVertical": false,
+        "FogStrength": 1,
+        "Opaque": false,
+        "Size": "32,32",
+        "Texture": "textures/block.vtex"
+      },
+      {
+        "__type": "Block",
+        "__guid": "8904e5bf-be95-4975-8db1-0bf6b0b31909"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "5cbedd72-430e-4d15-9aca-c06b1bfd1d37",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "32,32,32",
+        "Static": false
+      }
+    ],
+    "Children": [],
+    "__variables": [
+      {
+        "Id": "Color",
+        "Title": "Color",
+        "Targets": [
+          {
+            "Id": "f73a8dc3-dd9f-424c-b1e1-8640244800b7",
+            "Property": "Color"
+          }
+        ]
+      }
+    ]
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

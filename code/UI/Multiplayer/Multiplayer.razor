@@ -1,0 +1,29 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root>
+	<DoubleScore />
+	@{
+		switch (MultiplayerGame.Instance.CurrentState)
+		{
+			case MultiplayerGame.GameState.WaitingPlayer:
+				<SideSelect />
+				break;
+			case MultiplayerGame.GameState.Ready:
+				<CountDown />
+				<SideSelect />
+				break;
+			case MultiplayerGame.GameState.Playing:
+				break;
+			case MultiplayerGame.GameState.Finish:
+				<CountDown />
+				break;
+		}
+	}
+</root>
+
+@code
+{
+	protected override int BuildHash() => System.HashCode.Combine(MultiplayerGame.Instance.CurrentState);
+}

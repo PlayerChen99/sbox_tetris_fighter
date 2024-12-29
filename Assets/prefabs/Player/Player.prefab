@@ -1,0 +1,68 @@
+{
+  "RootObject": {
+    "__guid": "7baffa42-8c96-433f-81d5-45d6bcea6daf",
+    "Flags": 0,
+    "Name": "player",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "PlayerController",
+        "__guid": "eb6d4af6-c580-4e6f-a652-af2acd6850aa",
+        "Acceleration": 800,
+        "Gravity": 200,
+        "JumpSpeed": 600,
+        "MaxFallSpeed": 800,
+        "MinFallSpeed": 200,
+        "PlayerAnimationHelper": {
+          "_type": "component",
+          "component_id": "10a408c7-c917-4417-8801-c9ad10e8c67d",
+          "go": "2cc7fbbe-c3f8-490b-83d1-5fa5fabfe310",
+          "component_type": "CitizenAnimationHelper"
+        }
+      }
+    ],
+    "Children": [
+      {
+        "__guid": "2cc7fbbe-c3f8-490b-83d1-5fa5fabfe310",
+        "Flags": 0,
+        "Name": "Model",
+        "Rotation": "0,0,0.7071068,0.7071068",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.SkinnedModelRenderer",
+            "__guid": "60224ec6-e6ce-48b9-b6f8-d75959c49577",
+            "BodyGroups": 341,
+            "CreateBoneObjects": false,
+            "MaterialGroup": "default",
+            "Model": "models/citizen/citizen.vmdl",
+            "RenderType": "On",
+            "Tint": "1,1,1,1",
+            "UseAnimGraph": true
+          },
+          {
+            "__type": "Sandbox.Citizen.CitizenAnimationHelper",
+            "__guid": "10a408c7-c917-4417-8801-c9ad10e8c67d",
+            "BodyWeight": 1,
+            "EyesWeight": 1,
+            "HeadWeight": 1,
+            "LookAtEnabled": false,
+            "Target": {
+              "_type": "component",
+              "component_id": "60224ec6-e6ce-48b9-b6f8-d75959c49577",
+              "go": "2cc7fbbe-c3f8-490b-83d1-5fa5fabfe310",
+              "component_type": "SkinnedModelRenderer"
+            }
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
